@@ -13,7 +13,7 @@ public class EmployeeDTO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
-    private CompanyDTO companyDTO;
+    private CompanyDTO company;
     private String employeeName;
     private String employeeAddress;
 

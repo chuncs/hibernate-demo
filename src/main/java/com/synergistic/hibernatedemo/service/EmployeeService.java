@@ -19,15 +19,17 @@ public class EmployeeService {
     private CompanyRepository companyRepository;
 
     public void createEmployee(String name, String address, long companyId) {
-        CompanyDTO companyDTO = companyRepository.findById(companyId);
+        CompanyDTO company = companyRepository.findById(companyId);
         EmployeeDTO employeeDTO = new EmployeeDTO();
         employeeDTO.setEmployeeName(name);
         employeeDTO.setEmployeeAddress(address);
-        employeeDTO.setCompanyDTO(companyDTO);
+        employeeDTO.setCompany(company);
         employeeRepository.save(employeeDTO);
     }
 
     public List<EmployeeDTO> getAllEmployee() {
+        System.out.println(employeeRepository.findAllEmployeeCompany());
+
         return employeeRepository.findAllEmployee();
     }
 }
